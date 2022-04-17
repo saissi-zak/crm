@@ -1,0 +1,7 @@
+<h1> Ajouter un client </h1>
+
+<form action="/web/client" th:action="@{/web/client}" th:object="${clt}" method="post">
+	<p>Nom:<input type="text" th:field="*{name}"/></p>
+	<p>Prenom:<input type="text" th:field="*{prenom}"/></p>
+	<p><input type="submit" value="Submit" /></p>
+</form>

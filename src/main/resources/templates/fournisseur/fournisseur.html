@@ -1,0 +1,25 @@
+<h1>Liste des fournisseur</h2>
+<a href="/web/fournisseur/new">ajouter un fournisseur</a>
+<a href="/web/product/new">ajouter un produit</a>
+<table>
+	<thead>
+		<tr>
+	<th>ID</th>
+	<th>Nom</th>
+	<th>rc</th>
+	<th>ide</th>
+		</tr>
+</thead>
+<tbody>
+<tr th:each="frs:${fournisseurs}">
+	<td th:text="${frs.idfrs}"></td>
+	<td th:text="${frs.nomfrs}"></td>
+	<td th:text="${frs.rcfrs}"></td>
+	<td th:text="${frs.idefrs}"></td>
+	<td><a th:href="@{'/web/fournisseur/'+${frs.idfrs}+'/edit'}">modifier</a></td>
+</tr>
+</tbody>
+</table>
+
+
+

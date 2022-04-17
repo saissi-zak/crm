@@ -1,0 +1,25 @@
+<h1>Liste des clients</h2>
+<a href="/web/client/new">ajouter un client</a>
+<a href="/web/product/new">ajouter un produit</a>
+<a href="/web/commande">liste des commandes</a>
+<table>
+	<thead>
+		<tr>
+	<th>ID</th>
+	<th>Nom</th>
+	<th>Prenom</th>
+	<th>Action</th>
+		</tr>
+</thead>
+<tbody>
+<tr th:each="client:${clients}">
+	<td th:text="${client.id}"></td>
+	<td th:text="${client.name}"></td>
+	<td th:text="${client.prenom}"></td>
+	<td><a th:href="@{'/web/client/'+${client.id}+'/edit'}">modifier</a></td>
+</tr>
+</tbody>
+</table>
+
+
+
