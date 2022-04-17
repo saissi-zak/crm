@@ -1,0 +1,51 @@
+<script type= "text/javascript" src="/lcmd.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+<h1> Ajouter une commande </h1>
+
+<form action="/web/commande" th:action="@{/web/commande}" th:object="${cmd}" method="post">
+
+<table>
+	<tr>
+	<td><p>numero:<input type="text" class="numcmd" th:id="numcmd" th:field="*{numcommande}"/></p></td>
+	<td><p>Montant:<input type="text" th:field="*{mntcommande}" th:id="mnt"/></p></td>
+	<td><p>Date:<input type="date" th:field="*{datecommande}"/></p></td>
+	
+	<td>Fournisseur
+	<select th:field="*{frs}" >
+	<option th:value="0"></option>
+    <option th:each="fournisseur:${frss}" th:value="${fournisseur.idfrs}" th:text="${fournisseur.nomfrs}"></option>
+    </select></td>
+	</tr>
+	
+	<tr>
+    
+    <td>Article
+	<select id="art">
+	<option th:value="0"></option>
+    <option th:each="product:${artt}" th:value="${product.id}" th:text="${product.name}"></option>
+    </select></td>
+    
+    
+    <td><p>Quantité:<input type="text" id="qte"/></p></td>
+	<td><p>Prix:<input type="text" id="prix"/></p></td>
+	<td><a href="javascript:addlcmd()">ajouter ligne commande</a></td>
+	</tr>
+</table>
+
+<h2>Détail Commande</h2>
+<table id="detcmd">
+
+	<thead>
+		<tr>
+	<th>Product</th>
+	<th>Quantite</th>
+	<th>Montant</th>
+	<th>Total</th>
+	<th></th>
+		</tr>
+</thead>
+</table>
+	
+	
+	<p><input type="submit" value="Submit" /></p>
+</form>

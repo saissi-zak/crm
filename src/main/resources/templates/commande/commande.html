@@ -1,0 +1,26 @@
+<h1>Liste des commandes</h2>
+<a href="/web/client/new">ajouter un client</a>
+<a href="/web/product/new">ajouter un produit</a>
+<a href="/web/commande/new">ajouter une commande</a>
+<table>
+	<thead>
+		<tr>
+	<th>ID</th>
+	<th>Numero</th>
+	<th>Montant</th>
+	<th>Date</th>
+		</tr>
+</thead>
+<tbody>
+<tr th:each="cmd:${commandes}">
+	<td th:text="${cmd.idcommande}"></td>
+	<td th:text="${cmd.numcommande}"></td>
+	<td th:text="${cmd.mntcommande}"></td>
+	<td th:text="${cmd.datecommande}"></td>
+	<td><a th:href="@{'/web/commande/'+${cmd.idcommande}+'/edit'}">modifier</a></td>
+</tr>
+</tbody>
+</table>
+
+
+

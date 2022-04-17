@@ -1,0 +1,8 @@
+<h1> Ajouter un fournisseur </h1>
+
+<form action="/web/fournisseur" th:action="@{/web/fournisseur}" th:object="${frs}" method="post">
+	<p>Nom:<input type="text" th:field="*{nomfrs}"/></p>
+	<p>rc:<input type="text" th:field="*{rcfrs}"/></p>
+	<p>ide:<input type="text" th:field="*{idefrs}"/></p>
+	<p><input type="submit" value="Valider" /></p>
+</form>

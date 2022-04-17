@@ -1,0 +1,20 @@
+<h1>Liste des produits</h2>
+<table>
+	<thead>
+		<tr>
+	<th>ID</th>
+	<th>Produit</th>
+	<th>Action</th>
+		</tr>
+</thead>
+<tbody>
+<tr th:each="product:${products}">
+	<td th:text="${product.id}"></td>
+	<td th:text="${product.name}"></td>
+	<td><a th:href="@{'/web/product/'+${product.id}+'/edit'}">modifier</a></td>
+</tr>
+</tbody>
+</table>
+
+<a href="/web/product/new">ajouter</a>
+

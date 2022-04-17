@@ -1,0 +1,7 @@
+<h1> Editer un client </h1>
+
+<form th:action="@{'/web/client/'+${id}+'/edit'}" th:object="${clt}" method="post">
+	<p>Nom:<input type="text" th:field="*{name}"/></p>
+	<p>Prenom:<input type="text" th:field="*{prenom}"/></p>
+	<p><input type="submit" value="Submit" /></p>
+</form>
